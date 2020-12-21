@@ -1,0 +1,6 @@
+/build
+/csvInputFolder
+/dist
+/sqliteOutputFolder
+/Main.spec
+__pycache__
