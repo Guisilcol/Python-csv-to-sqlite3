@@ -7,7 +7,7 @@ def csv_to_dataframe(filepath):
     parameters = None
     
     try:
-        parameters = get_parameters_of_csv(filepath)
+        parameters = get_parameters_of_file(filepath)
         colunm_separator = parameters["sep"] if parameters["sep"] != None else ";"
         
     except expression:
@@ -20,7 +20,7 @@ def csv_to_dataframe(filepath):
             data = io.StringIO(data_raw_without_parameters)
             return pd.read_csv(data, sep=colunm_separator)     
             
-def get_parameters_of_csv(filepath) -> dict:
+def get_parameters_of_file(filepath) -> dict:
     data = None
     
     with open(filepath) as file:
