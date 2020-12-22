@@ -16,7 +16,7 @@ def delimited_file_to_dataframe(filepath):
     finally:
         with open(filepath) as file:
             data = get_file_without_parameters(filepath)
-            return pd.read_csv(data, sep=colunm_separator)     
+            return pd.read_csv(data, sep=colunm_separator) 
  
 """ Será implementada posteriormente 
 def fixed_width_file_to_dataframe(filepath):
@@ -52,7 +52,7 @@ def get_parameters_of_file(filepath) -> dict:
     return parameters
 
 def get_file_without_parameters(filepath: str) -> io.StringIO:
-    with open(filepath) as file:
+    with open(filepath, encoding="utf-8") as file:
         data_raw = file.read()
         data_raw_without_parameters = re.sub("\/\*([^\)]+)\*\/", "", data_raw)
         data = io.StringIO(data_raw_without_parameters)
