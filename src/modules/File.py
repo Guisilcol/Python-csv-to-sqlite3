@@ -15,10 +15,6 @@ def get_absolute_directory_of_files(folder_directory: str) -> list:
     file_list = [os.path.join(folder_directory, f) for f in os.listdir(folder_directory) if os.path.isfile(os.path.join(folder_directory, f))]
     return [f for f in file_list if f.endswith('.csv')]
 
-def get_filenames(folder_directory: str) -> list:
-    file_list = [f for f in os.listdir(folder_directory) if os.path.isfile(os.path.join(folder_directory, f))]
-    return [f for f in file_list if f.endswith('.csv')]
-
 def get_filename_of_absolute_path(directory: str) -> str:
     return re.sub(".+[\\\/]", '', directory)
 
