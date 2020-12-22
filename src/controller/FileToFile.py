@@ -3,7 +3,6 @@ import modules.File as File
 import modules.Reader as Reader
 from pathlib import Path
 from tabulate import tabulate
-import numpy as np
 
 tabulate.PRESERVE_WHITESPACE = True
 
@@ -31,7 +30,7 @@ def read_csv_and_load_fwf() -> None:
         print("> Iniciando o processo do arquivo {} para {}".format(filename, new_filename))
         
         dataframe = Reader.delimited_file_to_dataframe(directory)
-        #print(dataframe[0:26])
+
         content = tabulate(dataframe.values.tolist(), list(dataframe.columns),
                            tablefmt="plain",
                            colalign=("left", "left"), 
