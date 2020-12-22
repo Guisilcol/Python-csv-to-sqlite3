@@ -2,7 +2,7 @@ import re
 import io
 import pandas as pd 
 
-def csv_to_dataframe(filepath):
+def delimited_file_to_dataframe(filepath):
     colunm_separator = None
     parameters = None
     
@@ -10,16 +10,25 @@ def csv_to_dataframe(filepath):
         parameters = get_parameters_of_file(filepath)
         colunm_separator = parameters["sep"] if parameters["sep"] != None else ";"
         
-    except expression:
+    except Exception:
         colunm_separator = ";"
         
     finally:
         with open(filepath) as file:
-            data_raw = file.read()
-            data_raw_without_parameters = re.sub("\/\*([^\)]+)\*\/", "", data_raw)
-            data = io.StringIO(data_raw_without_parameters)
+            data = get_file_without_parameters(filepath)
             return pd.read_csv(data, sep=colunm_separator)     
-            
+ 
+""" Será implementada posteriormente 
+def fixed_width_file_to_dataframe(filepath):
+    parameters = None 
+    
+    try:
+        parameters = get_parameters_of_file(filepath)
+        
+    except Exception:
+        yield IOError(message="> Erro: Não foi possível restaurar os parâmetros do arquivo")
+"""
+
 def get_parameters_of_file(filepath) -> dict:
     data = None
     
@@ -42,3 +51,9 @@ def get_parameters_of_file(filepath) -> dict:
     
     return parameters
 
+def get_file_without_parameters(filepath: str) -> io.StringIO:
+    with open(filepath) as file:
+        data_raw = file.read()
+        data_raw_without_parameters = re.sub("\/\*([^\)]+)\*\/", "", data_raw)
+        data = io.StringIO(data_raw_without_parameters)
+        return data
