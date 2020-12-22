@@ -17,15 +17,13 @@ def get_absolute_directory_of_files(folder_directory: str) -> list:
 
 def get_filenames(folder_directory: str) -> list:
     file_list = [f for f in os.listdir(folder_directory) if os.path.isfile(os.path.join(folder_directory, f))]
-    return [f for f in file_list if f.endswith('.csv')]
+    return [f for f in file_list if f.endswith('.csv') or f.endswith('.txt')]
 
 def get_filename_of_absolute_path(directory: str) -> str:
     return re.sub(".+[\\\/]", '', directory)
 
 def generate_log(directory: str, exception: Exception) -> None: 
-    
     separator = '****************************************************************'
-    
     content = """
     {}
     Tipo: {}
@@ -34,4 +32,3 @@ def generate_log(directory: str, exception: Exception) -> None:
     """.format(separator, type(exception), exception, separator)
     with open(directory, 'a') as f:
         f.write(content)
-        
