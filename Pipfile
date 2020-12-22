@@ -9,6 +9,7 @@ verify_ssl = true
 pandas = "*"
 auto-py-to-exe = "*"
 pyinstaller = "*"
+tabulate = "*"
 
 [requires]
 python_version = "3.8"
