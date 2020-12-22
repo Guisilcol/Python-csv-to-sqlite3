@@ -1,5 +1,5 @@
-import json
 import controller.FileToDatabase as FileToDatabase
+import controller.FileToFile as FileToFile
 import warnings
 import Config
 
@@ -22,6 +22,8 @@ if __name__ == "__main__":
     
     if(option == "1"):
         FileToDatabase.read_csv_and_load_sqlite3()
+    if(option == "2"):
+        FileToFile.read_csv_and_load_fwf()
     
 
     
