@@ -3,4 +3,5 @@
 /dist
 /sqliteOutputFolder
 /Main.spec
+/backup
 __pycache__
