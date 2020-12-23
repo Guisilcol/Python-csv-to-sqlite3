@@ -7,7 +7,7 @@ import warnings
 from pathlib import Path
 import sys
 
-def read_csv_and_load_sqlite3() -> None:
+def read_file_and_load_sqlite3() -> None:
     try:
         config = Config.get_config_dict()
         DIRECTORYS = config['diretorios']

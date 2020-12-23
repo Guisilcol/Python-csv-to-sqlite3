@@ -21,7 +21,7 @@ if __name__ == "__main__":
     option = input("Informe a opção: ")
     
     if(option == "1"):
-        FileToDatabase.read_csv_and_load_sqlite3()
+        FileToDatabase.read_file_and_load_sqlite3()
     if(option == "2"):
         FileToFile.read_csv_and_load_fwf()
     if(option == "3"):
