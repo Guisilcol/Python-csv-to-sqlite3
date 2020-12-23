@@ -18,13 +18,17 @@ if __name__ == "__main__":
 
     print(welcome_message)
         
-    option = input("\n")
+    option = input("Informe a opção: ")
     
     if(option == "1"):
         FileToDatabase.read_csv_and_load_sqlite3()
     if(option == "2"):
         FileToFile.read_csv_and_load_fwf()
+    if(option == "3"):
+        FileToFile.read_fwf_and_load_csv()
     
+    print("> Fim do processo")
+    input("> Aperte Enter para continuar...")
 
     
     
