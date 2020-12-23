@@ -11,9 +11,9 @@ def create_folders(list_of_folders: list) -> None:
     for diretory in list_of_folders:
         os.mkdir(diretory)
         
-def get_absolute_directory_of_files(folder_directory: str) -> list:
+def get_absolute_directory_of_files(folder_directory: str, extension: str) -> list:
     file_list = [os.path.join(folder_directory, f) for f in os.listdir(folder_directory) if os.path.isfile(os.path.join(folder_directory, f))]
-    return [f for f in file_list if f.endswith('.csv')]
+    return [f for f in file_list if f.endswith(extension)]
 
 def get_filename_of_absolute_path(directory: str) -> str:
     return re.sub(".+[\\\/]", '', directory)

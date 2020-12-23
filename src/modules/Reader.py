@@ -2,7 +2,7 @@ import re
 import io
 import pandas as pd 
 
-def delimited_file_to_dataframe(filepath):
+def delimited_file_to_dataframe(filepath) -> pd.DataFrame:
     colunm_separator = None
     parameters = None
     
@@ -17,17 +17,10 @@ def delimited_file_to_dataframe(filepath):
         with open(filepath) as file:
             data = get_file_without_parameters(filepath)
             return pd.read_csv(data, sep=colunm_separator) 
- 
-""" Será implementada posteriormente 
-def fixed_width_file_to_dataframe(filepath):
-    parameters = None 
-    
-    try:
-        parameters = get_parameters_of_file(filepath)
-        
-    except Exception:
-        yield IOError(message="> Erro: Não foi possível restaurar os parâmetros do arquivo")
-"""
+
+def fixed_width_file_to_dataframe(filepath) -> pd.DataFrame:    
+    data = get_file_without_parameters(filepath)
+    return pd.read_fwf(data) 
 
 def get_parameters_of_file(filepath) -> dict:
     data = None
@@ -55,5 +48,5 @@ def get_file_without_parameters(filepath: str) -> io.StringIO:
     with open(filepath, encoding="utf-8") as file:
         data_raw = file.read()
         data_raw_without_parameters = re.sub("\/\*([^\)]+)\*\/", "", data_raw)
-        data = io.StringIO(data_raw_without_parameters)
+        data = io.StringIO(data_raw_without_parameters.strip())
         return data
