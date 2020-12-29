@@ -14,7 +14,8 @@ if __name__ == "__main__":
         "       ********** CSV to SQLITE3 ********** \n\n" \
         "1 - Exportar dados de arquivos para banco de dados \n" \
         "2 - Transformar arquivos .csv em arquivos posicionais \n" \
-        "3 - Transformar arquivos posicionais em arquivos .csv \n"
+        "3 - Transformar arquivos posicionais em arquivos .csv \n" \
+        "Informe qualquer outra coisa para sair "
 
     print(welcome_message)
         
@@ -27,7 +28,6 @@ if __name__ == "__main__":
     if(option == "3"):
         FileToFile.read_fwf_and_load_csv()
     
-    print("> Fim do processo")
     input("> Aperte Enter para continuar...")
 
     
