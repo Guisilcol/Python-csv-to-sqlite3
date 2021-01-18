@@ -60,3 +60,13 @@ def read_file_and_load_sqlite3() -> None:
         File.generate_log(LOG_PATH, e)
         print("> Ocorreu um erro desconhecido durante o processo")
 
+def read_file_and_load_sqlserver() -> None: 
+    pass
+
+def read_file_and_load_oracle() -> None: 
+    pass
+
+def read_file_and_load_mysql() -> None: 
+    pass
+
+    
