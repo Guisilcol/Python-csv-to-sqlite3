@@ -16,11 +16,11 @@ def delimited_file_to_dataframe(filepath) -> pd.DataFrame:
     finally:
         with open(filepath) as file:
             data = get_file_without_parameters(filepath)
-            return pd.read_csv(data, sep=colunm_separator) 
+            return pd.read_csv(data, sep=colunm_separator, index_col=False) 
 
 def fixed_width_file_to_dataframe(filepath) -> pd.DataFrame:    
     data = get_file_without_parameters(filepath)
-    return pd.read_fwf(data) 
+    return pd.read_fwf(data, index_col=False) 
 
 def get_parameters_of_file(filepath) -> dict:
     data = None
