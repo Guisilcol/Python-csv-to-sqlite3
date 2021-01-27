@@ -9,7 +9,10 @@ def check_if_the_folders_are_created(list_of_folders: list) -> bool:
 
 def create_folders(list_of_folders: list) -> None:
     for diretory in list_of_folders:
-        os.mkdir(diretory)
+        try:
+            os.mkdir(diretory)
+        except FileExistsError:
+            pass
         
 def get_absolute_directory_of_files(folder_directory: str, extension: str) -> list:
     file_list = [os.path.join(folder_directory, f) for f in os.listdir(folder_directory) if os.path.isfile(os.path.join(folder_directory, f))]
