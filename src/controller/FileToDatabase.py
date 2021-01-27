@@ -16,13 +16,7 @@ def read_file_and_load_sqlite3() -> None:
         SQLITE_DB_NAME = config['sqliteDbName']
         SQLITE_DB_ABSOLUTE_PATH = '{}/{}'.format(SQLITE_OUTPUT_DIRECTORY, SQLITE_DB_NAME)
         LOG_PATH = config['logFilepath']
-         
-        if File.check_if_the_folders_are_created(DIRECTORYS):
-            print("> As pastas necessárias já estão criadas")
-        else:
-            File.create_folders(DIRECTORYS)
-            print("> As pastas necessárias não foram criadas. O programa fará a criação de todas")
-            
+                     
         print("> Iniciando processo")
         print("> Criando/Acessando o banco de dados")
 
