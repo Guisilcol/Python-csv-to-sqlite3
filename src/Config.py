@@ -1,5 +1,14 @@
-import json
+
+config = {
+    "diretorios": [
+        "./inputFolder",
+        "./outputFolder"
+    ],
+    "sqliteDbName": "database.db",
+    "logFilepath": "./log.log",
+    "isInDevelopment": False
+}
+
 
 def get_config_dict() -> dict:
-    with open('config.json', 'r') as f:
-        return json.load(f)
+    return config

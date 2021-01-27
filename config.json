@@ -1,9 +1,0 @@
-{
-    "diretorios": [
-        "./csvInputFolder",
-        "./sqliteOutputFolder"
-    ],
-    "sqliteDbName": "database.db",
-    "logFilepath": "./log.log",
-    "isInDevelopment": false
-}
