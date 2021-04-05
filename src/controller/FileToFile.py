@@ -38,7 +38,6 @@ def read_csv_and_load_fwf() -> None:
                            numalign="left",
                            disable_numparse=True)
         
-        
         relative_directory_of_new_filename = "{}/{}".format(SQLITE_OUTPUT_DIRECTORY, new_filename)
         open(relative_directory_of_new_filename, "w", encoding='utf-8') \
             .write(content)
@@ -82,7 +81,7 @@ def read_fwf_and_load_csv() -> None:
         
         print("> Processamento do arquivo {} concluido".format(new_filename))
     
-    
+
     
     
     
