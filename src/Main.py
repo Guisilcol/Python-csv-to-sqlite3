@@ -46,10 +46,5 @@ if __name__ == "__main__":
     elif(option == "6"):
         FileToDatabase.read_file_and_load_mysql()
         print("> AVISO: Funcionalidade não implementada ")
-    else:
-        print("> Erro: A opção informada é inválida.")
     
     input("> Aperte Enter para continuar...")
-
-    
-    
